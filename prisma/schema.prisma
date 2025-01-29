@@ -24,3 +24,18 @@ model User {
 
   @@map("users")
 }
+ model Book {
+  id Int @id @default(autoincrement())
+  title   String
+  author String
+  publisher String
+  published_date DateTime
+  isbn Int @unique
+  category String
+  available_copies Int @default(1)
+  total_copies Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("books")
+ }
